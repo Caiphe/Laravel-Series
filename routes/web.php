@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('index'); });
-Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement');
-Route::get('/edit-announcement', [AnnouncementController::class, 'edit'])->name('edit-announcement');
+Route::get('/', function () { return view('index'); })->middleware('auth');
+Route::get('/announcement', [AnnouncementController::class, 'index'])->middleware('auth')->name('announcement');
+Route::get('/edit-announcement', [AnnouncementController::class, 'edit'])->middleware('auth')->name('edit-announcement');
 Route::patch('/update-announcement', [AnnouncementController::class, 'update'])->name('update-announcement');
-
+Route::post('/upload', [AnnouncementController::class, 'upload'])->name('file.upload');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

@@ -32,7 +32,9 @@ class AnnouncementRequest extends FormRequest
             'content' => 'required',
             'buttonText' => 'required',
             'buttonColor' => 'required',
-            'buttonLink' => 'required'
+            'buttonLink' => 'required',
+            'imageUpload' => ['required', 'max:20000'],
+            'imageUploadFilePond' => ['string', 'nullable']
         ];
     }
 }

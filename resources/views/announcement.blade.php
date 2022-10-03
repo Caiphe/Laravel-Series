@@ -10,6 +10,9 @@
             <h3>{{ $announcement->titleText }}</h3>
         </div>
         <div class="text-gray-600 px-5 py-5">
+
+            <img src="{{ asset($announcement->imageUpload) }}" alt="image" class="mx-auto" /> 
+
             <div>
                 {!! $announcement->content !!}
             </div>

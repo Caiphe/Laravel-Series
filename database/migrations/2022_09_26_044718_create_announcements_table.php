@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('buttonText');
             $table->string('buttonLink');
             $table->string('buttonColor');
+            $table->string('imageUpload')->nullable();
+            $table->string('imageUploadFilePond')->nullable();
             $table->timestamps();
         });
 
